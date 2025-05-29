@@ -1,0 +1,115 @@
+Promt 1
+
+Simular un torneo de tenis con 16 jugadores en formato de eliminación directa. Cada partido se juega al mejor de 3 sets(gana el primero que gana 2 sets) El ganador de cada partido avanza a la siguiente ronda. Las rondas se juegan en simultaneo; la siguiente ronda inicia solo cuando todos los partidos de la ronda actual han terminado.
+
+Reglas del torneo
+- Participan 16 jugadores numerados del 1 al 16.
+- El torneo tiene las siguientes rondas: octavos, cuartos, semifinal, final
+- Cada partido se juega a un máximo de 3 sets
+- Cada set se gana aleatoriamente, debe diseñar un mecanismo aleatorio
+- Se muestra el ganador de cada set y el resultado final del partido
+- En caso de empata 1 a 1 después de 2 sets, se juega un tercer set como desempate
+
+Esto lo realizaremos utilizando adecuadamente de ExecutorService, Callable y Future
+Realizaremos un hilo por cada enfrentamiento ya que hasta que acaben todos los enfrentamientos de cada ronda no podemos pasar a la siguiente:
+Los partidos entre cada jugador se repartiran asi
+Jugador 1 vs Jugador 16
+Jugador 2 vs Jugador 15
+Asi sucesivamente hasta formar los 8 enfrentamientos. Luego con los ganadores de cada ronda formaremos nuevos grupos con el ganador del Jugador 1 vs Jugador 16 y el ganador de Jugador 2 vs Jugador 15 y asi sucesivamente 
+Simula el tiempo de duraciónde cada partido en un rango comprendido entre 1.5 y 2 segundos
+Simular también partidos con hasta 3 sets con resultados visibles por set 
+Se imprimirá en pantalla todos los emparejamientos, el resultado del sets y el ganador de cada partido
+Asi mismo continuar con las rondas hasta que llegemos al campeon
+Al final quiero que la presentacion sea asi ===== OCTAVOS DE FINAL =====
+Jugador 1 vs Jugador 16
+Set 1: Jugador 16
+Set 2: Jugador 1
+Set 3: Jugador 1
+Ganador del partido: Jugador 1
+
+Jugador 2 vs Jugador 15
+Set 1: Jugador 2
+Set 2: Jugador 2
+Ganador del partido: Jugador 2
+
+Jugador 3 vs Jugador 14
+Set 1: Jugador 3
+Set 2: Jugador 14
+Set 3: Jugador 14
+Ganador del partido: Jugador 14
+
+Jugador 4 vs Jugador 13
+Set 1: Jugador 4
+Set 2: Jugador 13
+Set 3: Jugador 4
+Ganador del partido: Jugador 4
+
+Jugador 5 vs Jugador 12
+Set 1: Jugador 12
+Set 2: Jugador 12
+Ganador del partido: Jugador 12
+
+Jugador 6 vs Jugador 11
+Set 1: Jugador 11
+Set 2: Jugador 6
+Set 3: Jugador 6
+Ganador del partido: Jugador 6
+
+Jugador 7 vs Jugador 10
+Set 1: Jugador 10
+Set 2: Jugador 7
+Set 3: Jugador 10
+Ganador del partido: Jugador 10
+
+Jugador 8 vs Jugador 9
+Set 1: Jugador 8
+Set 2: Jugador 8
+Ganador del partido: Jugador 8
+
+===== CUARTOS DE FINAL =====
+Jugador 1 vs Jugador 2
+Set 1: Jugador 1
+Set 2: Jugador 1
+Ganador del partido: Jugador 1
+
+Jugador 14 vs Jugador 4
+Set 1: Jugador 14
+Set 2: Jugador 4
+Set 3: Jugador 14
+Ganador del partido: Jugador 14
+
+Jugador 12 vs Jugador 6
+Set 1: Jugador 6
+Set 2: Jugador 6
+Ganador del partido: Jugador 6
+
+Jugador 10 vs Jugador 8
+Set 1: Jugador 8
+Set 2: Jugador 10
+Set 3: Jugador 10
+Ganador del partido: Jugador 10
+
+===== SEMIFINAL =====
+Jugador 1 vs Jugador 14
+Set 1: Jugador 14
+Set 2: Jugador 1
+Set 3: Jugador 1
+Ganador del partido: Jugador 1
+
+Jugador 6 vs Jugador 10
+Set 1: Jugador 10
+Set 2: Jugador 6
+Set 3: Jugador 6
+Ganador del partido: Jugador 6
+
+===== FINAL =====
+Jugador 1 vs Jugador 6
+Set 1: Jugador 6
+Set 2: Jugador 6
+Ganador del partido: Jugador 6
+
+🏆 ¡Campeón del torneo: Jugador 6!
+Promt 2
+haslo utilizando hilos virtuales en donde vamos a ser que cada hilo sea un enfrentamiento en donde vamos a hacer que todos los enfrentamientos se ejecuten de manera concurrente todos los enfrentamientos a la vez y vamos a esperar a que todos terminen para seguir con la siguiente ronda en donde los ganadores se guardaran y haremos el mismo proceso de arriba para formar los enfrentamientos como te explique pero ya con los ganadores de cada enfrentamiento y de nuevo crearemos un hilo para cada enfrentamiento pero ahora la siguiente ronda y repetiremos lo mismo 
+Promt 3
+Hay un error al armar las llaves desde los cuartos de final ya que quiero que el ganador de Jugador 1 vs Jugador 16 es pere al ganador de Jugador 2 vs Jugador 15 y asi sucesivamente ya no con sus extremos como lo haciamos en los octavos de final ahora se forman de diferente forma como lo explique al principio
